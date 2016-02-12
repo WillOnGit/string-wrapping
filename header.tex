@@ -1,0 +1,79 @@
+%\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry} %Favourite. From 390 year 2
+\usepackage[textwidth=16cm,textheight=23cm]{geometry} %Nadia's
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{color}
+%\usepackage[lofdepth,lotdepth]{subfig} %difference between this and caption/subcaption??
+\usepackage{tikz}
+\usepackage{cleveref}
+\usepackage{lipsum}
+\usepackage{todonotes}
+\usepackage{microtype}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% format for defining new environments:
+% \newenvironment{ <<name>> }{ <<starting text/formatting rules>> }{ <<finishing text/formatting rules>> }
+
+%Proof environment
+\newenvironment{proof}
+ {
+   \begin{trivlist} %This new environment uses a list environment to handle spacing etc.
+     \item[] {\bf Proof.} %This starts a new list item and inserts the title ``Proof.'' in bold
+ }
+ {
+    \nolinebreak    %this stops a new line being inserted after proof before qed mark
+    \hfill          %this expands to the end of the line, pushing the QED mark to the right margin
+    \rule{2mm}{2mm} %this is the QED mark (small black square)
+   \end{trivlist}
+ }
+ 
+ %sketch of proof environment
+ \newenvironment{sproof}
+ {
+   \begin{trivlist}
+     \item[] {\bf Sketch of proof.}
+ }
+ {
+    \nolinebreak
+    \hfill
+    \rule{2mm}{2mm}
+   \end{trivlist}
+ }
+ 
+ %Definition environment
+\newenvironment{definition}
+ {
+   \begin{trivlist}
+     \item[] {\bf Definition.}
+ }
+ {
+   \end{trivlist}
+ }
+ 
+ 
+%Theorem environment (this is a bit different because there is a \newtheorem command)
+%Syntax \newtheorem{ <<name>> }{ <<Displayed Title>> }[ <<Where to take numbering from>> ]
+\newtheorem{theorem}{Theorem}[subsection] %this defines a new theorem environment ``theorem'' and numbers it within subsections
+\newtheorem{lemma}{Lemma}[subsection]     %Lemma environment
+\newtheorem{proposition}{Proposition}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+
+%Two very useful commands
+%Command syntax \newcommand{ <<name>> }[ <<number of arguments>> ]{ <<command content>> } #1, #2 etc mark where arguments are inserted
+
+%Differential - This is upright d (\rm means ``roman'' i.e. upright font). The rest of the command handles spacing.
+\newcommand{\ud}{\, {\rm d} \kern-.015em }
+
+%This is bold in math mode, and works for letters, numbers and greek (\mathbf doesn't work for greek).
+\newcommand{\bm}[1]{\mbox{\protect\boldmath $ #1 $}}
+
+
+
